@@ -1,4 +1,5 @@
 #include <cmath>
+#include <sstream>
 #include <stdexcept>
 #include "Vector2i.h"
 
@@ -6,11 +7,15 @@ using namespace ahs;
 
 ahs::Vector2i::Vector2i()
     : _data{ 0,0 }
+    , _is_length_calced{ false }
+    , _length{ 0 }
 {
 }
 
 ahs::Vector2i::Vector2i(Pint v0, Pint v1)
     : _data{ v0,v1 }
+    , _is_length_calced{ false }
+    , _length{ 0 }
 {
 }
 
@@ -87,6 +92,14 @@ Pint ahs::Vector2i::dot(const Vector2i & other) const
 Pint ahs::Vector2i::cross(const Vector2i & other) const
 {
     return _data[0] * other[1] - _data[1] * other[0];
+}
+
+std::string ahs::Vector2i::to_string() const
+{
+    std::ostringstream oss;
+    oss << '[' << _data[0] << ", " << _data[1] << ']';
+
+    return oss.str();
 }
 
 Vector2i ahs::Vector2i::zero()

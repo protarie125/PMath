@@ -3,6 +3,7 @@
  * E-mail: protarie@gmail.com
  * github: https://github.com/protarie125
  */
+#include <string>
 #include <array>
 #include "PTypeDefinition.h"
 
@@ -38,6 +39,7 @@ namespace ahs
         virtual Pdouble length();
         virtual Pint dot(const Vector2i& other) const;
         virtual Pint cross(const Vector2i& other) const;
+        virtual std::string to_string() const;
 
     public: // static
         static Vector2i zero();
@@ -48,7 +50,7 @@ namespace ahs
         std::array<Pint, 2> _data;
 
     private:
-        bool _is_length_calced{ false };
+        bool _is_length_calced;
         Pdouble _length;
     };
 }

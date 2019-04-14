@@ -143,10 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Point2i.h" />
     <ClInclude Include="PTypeDefinition.h" />
     <ClInclude Include="Vector2i.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Point2i.cpp" />
     <ClCompile Include="Vector2i.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
