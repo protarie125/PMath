@@ -24,12 +24,18 @@
     <ClInclude Include="Point2i.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Vector2d.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector2i.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Point2i.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2d.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

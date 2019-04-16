@@ -1,4 +1,8 @@
 ﻿#pragma once
+/*
+ * E-mail: protarie@gmail.com
+ * github: https://github.com/protarie125
+ */
 #include "../PMathCpp/Vector2i.h"
 
 using namespace System;
