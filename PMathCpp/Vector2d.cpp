@@ -1,6 +1,7 @@
 #include <cmath>
 #include <sstream>
 #include "Vector2d.h"
+#include "Vector2i.h"
 
 using namespace ahs;
 
@@ -13,6 +14,13 @@ ahs::Vector2d::Vector2d()
 
 ahs::Vector2d::Vector2d(Pdouble v0, Pdouble v1)
     : _data{ v0,v1 }
+    , _is_length_calced{ false }
+    , _length{ 0 }
+{
+}
+
+ahs::Vector2d::Vector2d(const Vector2i& conv)
+    : _data{ static_cast<Pdouble>(conv[0]),static_cast<Pdouble>(conv[1]) }
     , _is_length_calced{ false }
     , _length{ 0 }
 {

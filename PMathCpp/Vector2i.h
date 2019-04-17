@@ -9,11 +9,14 @@
 
 namespace ahs
 {
+    class Vector2d;
+
     class Vector2i
     {
     public:
         Vector2i();
         Vector2i(Pint v0, Pint v1);
+        explicit Vector2i(const Vector2d& conv);
         virtual ~Vector2i() = default;
 
     public: // get
