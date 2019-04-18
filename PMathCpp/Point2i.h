@@ -4,15 +4,18 @@
  * github: https://github.com/protarie125
  */
 #include "PTypeDefinition.h"
-#include "Vector2i.h"
 
 namespace ahs
 {
+    class Vector2i;
+    class Point2d;
+
     class Point2i
     {
     public:
         Point2i();
         Point2i(Pint x, Pint y);
+        explicit Point2i(const Point2d& conv);
         virtual ~Point2i() = default;
 
     public: // get

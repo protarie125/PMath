@@ -1,6 +1,7 @@
 #include <sstream>
 #include "Point2i.h"
 #include "Vector2i.h"
+#include "Point2d.h"
 
 using namespace ahs;
 
@@ -13,6 +14,12 @@ ahs::Point2i::Point2i()
 ahs::Point2i::Point2i(Pint x, Pint y)
     : _x{ x }
     , _y{ y }
+{
+}
+
+ahs::Point2i::Point2i(const Point2d& conv)
+    : _x{ static_cast<Pint>(conv.x()) }
+    , _y{ static_cast<Pint>(conv.y()) }
 {
 }
 
