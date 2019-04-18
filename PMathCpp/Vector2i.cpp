@@ -44,6 +44,7 @@ Pint& ahs::Vector2i::operator[](size_t index)
         throw std::out_of_range{ "0 <= index && index < 2" };
     }
 
+    _is_length_calced = false; // setter가 불릴때마다 길이를 새로 계산해야 함을 표시합니다.
     return _data.at(index);
 }
 
@@ -81,13 +82,14 @@ Vector2i& ahs::Vector2i::operator*=(Pint n)
     return *this;
 }
 
-Pdouble ahs::Vector2i::length()
+Pdouble ahs::Vector2i::length() const
 {
     if (!_is_length_calced)
     {
         auto v0 = _data[0];
         auto v1 = _data[1];
         _length = std::sqrt(v0 * v0 + v1 * v1);
+        _is_length_calced = true;
     }
     return _length;
 }

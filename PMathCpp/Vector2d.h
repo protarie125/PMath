@@ -41,11 +41,11 @@ namespace ahs
         friend Vector2d operator/(const Vector2d& v, Pdouble s);
 
     public:
-        virtual Pdouble length();
+        virtual Pdouble length() const;
         virtual Pdouble dot(const Vector2d& other) const;
         virtual Pdouble cross(const Vector2d& other) const;
         virtual Vector2d rotate(Pdouble radian) const;
-        virtual Vector2d normalize();
+        virtual Vector2d normalize() const;
         virtual std::string to_string() const;
 
     public: // static
@@ -57,7 +57,7 @@ namespace ahs
         std::array<Pdouble, 2> _data;
 
     private:
-        bool _is_length_calced;
-        Pdouble _length;
+        mutable bool _is_length_calced;
+        mutable Pdouble _length;
     };
 }

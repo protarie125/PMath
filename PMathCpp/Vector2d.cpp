@@ -43,6 +43,7 @@ Pdouble& ahs::Vector2d::operator[](size_t index)
         throw std::out_of_range{ "0 <= index && index < 2" };
     }
 
+    _is_length_calced = false; // setter가 불릴때마다 길이를 새로 계산해야 함을 표시합니다.
     return _data.at(index);
 }
 
@@ -88,13 +89,14 @@ Vector2d& ahs::Vector2d::operator/=(Pdouble s)
     return *this;
 }
 
-Pdouble ahs::Vector2d::length()
+Pdouble ahs::Vector2d::length() const
 {
     if (!_is_length_calced)
     {
         auto v0 = _data[0];
         auto v1 = _data[1];
         _length = std::sqrt(v0 * v0 + v1 * v1);
+        _is_length_calced = true;
     }
     return _length;
 }
@@ -120,7 +122,7 @@ Vector2d ahs::Vector2d::rotate(Pdouble radian) const
     return Vector2d{ x,y };
 }
 
-Vector2d ahs::Vector2d::normalize()
+Vector2d ahs::Vector2d::normalize() const
 {
     return (*this) / length();
 }
@@ -168,7 +170,7 @@ Vector2d ahs::operator*(Pdouble s, const Vector2d & v)
     return v * s;
 }
 
-Vector2d ahs::operator/(const Vector2d& v, Pdouble s)
+Vector2d ahs::operator/(const Vector2d & v, Pdouble s)
 {
     return v * (1.0 / s);
 }

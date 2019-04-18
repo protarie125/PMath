@@ -39,7 +39,7 @@ namespace ahs
         friend Vector2i operator*(Pint n, const Vector2i& v);
 
     public:
-        virtual Pdouble length();
+        virtual Pdouble length() const;
         virtual Pint dot(const Vector2i& other) const;
         virtual Pint cross(const Vector2i& other) const;
         virtual std::string to_string() const;
@@ -53,7 +53,7 @@ namespace ahs
         std::array<Pint, 2> _data;
 
     private:
-        bool _is_length_calced;
-        Pdouble _length;
+        mutable bool _is_length_calced;
+        mutable Pdouble _length;
     };
 }
