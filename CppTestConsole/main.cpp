@@ -1,19 +1,15 @@
 #include <iostream>
 #include "../PMathCpp/Vector2d.h"
+#include "../PMathCpp/Line2.h"
 
 using namespace ahs;
 
 int main()
 {
-    Vector2d v{ 3, 4 };
-    std::cout << v.to_string() << '\n';
+    Point2d p{ 3, 0 };
+    Line2 l{ Vector2d::e1(), Point2d{6, 0} };
 
-    constexpr auto pi = 3.14159265358979323846;
-    v = v.rotate(pi / 2);
-    std::cout << v.to_string() << '\n';
-
-    v = v.normalize();
-    std::cout << v.to_string() << '\n';
+    std::cout << l.distance(p) << '\n';
 
     return 0;
 }

@@ -10,6 +10,7 @@ namespace ahs
 {
     class Vector2d;
     class Point2i;
+    class Line2;
 
     class Point2d
     {
@@ -50,6 +51,7 @@ namespace ahs
         virtual Vector2d to_vector() const;
         virtual Vector2d to_vector(const Point2d& origin) const;
         virtual Pdouble distance(const Point2d& other) const;
+        virtual Pdouble distance(const Line2& l) const;
         virtual std::string to_string() const;
 
     public: // static

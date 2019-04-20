@@ -11,10 +11,11 @@ namespace DotnetTestConsole
     {
         static void Main(string[] args)
         {
-            Vector2i v = new PMathDotnet.Vector2i(3, 5);
+            Vector2i v = new PMathDotnet.Vector2i(3, 3);
             var e0 = Vector2i.E0;
             var v1 = v + e0;
             Console.WriteLine(v1);
+            Console.WriteLine(v1.Length);
         }
     }
 }

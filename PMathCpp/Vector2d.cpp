@@ -7,22 +7,22 @@ using namespace ahs;
 
 ahs::Vector2d::Vector2d()
     : _data{ 0,0 }
-    , _is_length_calced{ false }
     , _length{ 0 }
+    , _is_length_calced{ false }
 {
 }
 
 ahs::Vector2d::Vector2d(Pdouble v0, Pdouble v1)
     : _data{ v0,v1 }
-    , _is_length_calced{ false }
     , _length{ 0 }
+    , _is_length_calced{ false }
 {
 }
 
 ahs::Vector2d::Vector2d(const Vector2i& conv)
     : _data{ static_cast<Pdouble>(conv[0]),static_cast<Pdouble>(conv[1]) }
-    , _is_length_calced{ false }
     , _length{ 0 }
+    , _is_length_calced{ false }
 {
 }
 
@@ -124,7 +124,10 @@ Vector2d ahs::Vector2d::rotate(Pdouble radian) const
 
 Vector2d ahs::Vector2d::normalize() const
 {
-    return (*this) / length();
+    auto ret = (*this) / length();
+    ret._length = 1;
+    ret._is_length_calced = true;
+    return ret;
 }
 
 std::string ahs::Vector2d::to_string() const

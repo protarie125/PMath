@@ -51,9 +51,9 @@ namespace ahs
 
     private: // member
         std::array<Pint, 2> _data;
+        mutable Pdouble _length;
 
     private:
         mutable bool _is_length_calced;
-        mutable Pdouble _length;
     };
 }

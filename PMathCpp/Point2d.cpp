@@ -2,6 +2,7 @@
 #include "Point2d.h"
 #include "Vector2d.h"
 #include "Point2i.h"
+#include "Line2.h"
 
 using namespace ahs;
 
@@ -149,6 +150,11 @@ Vector2d ahs::Point2d::to_vector(const Point2d & origin) const
 Pdouble ahs::Point2d::distance(const Point2d & other) const
 {
     return (to_vector(other)).length();
+}
+
+Pdouble ahs::Point2d::distance(const Line2& l) const
+{
+    return l.distance(*this);
 }
 
 std::string ahs::Point2d::to_string() const

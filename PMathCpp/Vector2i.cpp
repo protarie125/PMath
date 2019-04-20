@@ -8,22 +8,22 @@ using namespace ahs;
 
 ahs::Vector2i::Vector2i()
     : _data{ 0,0 }
-    , _is_length_calced{ false }
     , _length{ 0 }
+    , _is_length_calced{ false }
 {
 }
 
 ahs::Vector2i::Vector2i(Pint v0, Pint v1)
     : _data{ v0,v1 }
-    , _is_length_calced{ false }
     , _length{ 0 }
+    , _is_length_calced{ false }
 {
 }
 
 ahs::Vector2i::Vector2i(const Vector2d& conv)
     : _data{ static_cast<Pint>(conv[0]), static_cast<Pint>(conv[1]) }
-    , _is_length_calced{ false }
     , _length{ 0 }
+    , _is_length_calced{ false }
 {
 }
 

@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Line2.h" />
     <ClInclude Include="Point2d.h" />
     <ClInclude Include="Point2i.h" />
     <ClInclude Include="PTypeDefinition.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Vector2i.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Line2.cpp" />
     <ClCompile Include="Point2d.cpp" />
     <ClCompile Include="Point2i.cpp" />
     <ClCompile Include="Vector2d.cpp" />
