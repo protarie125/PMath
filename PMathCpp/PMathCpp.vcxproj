@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Line2.h" />
     <ClInclude Include="Point2d.h" />
     <ClInclude Include="Point2i.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Vector2i.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Line2.cpp" />
     <ClCompile Include="Point2d.cpp" />
     <ClCompile Include="Point2i.cpp" />

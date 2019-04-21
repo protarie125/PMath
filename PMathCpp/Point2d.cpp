@@ -3,6 +3,7 @@
 #include "Vector2d.h"
 #include "Point2i.h"
 #include "Line2.h"
+#include "Circle.h"
 
 using namespace ahs;
 
@@ -155,6 +156,11 @@ Pdouble ahs::Point2d::distance(const Point2d & other) const
 Pdouble ahs::Point2d::distance(const Line2& l) const
 {
     return l.distance(*this);
+}
+
+Pdouble ahs::Point2d::distance(const Circle& s) const
+{
+    return s.distance(*this);
 }
 
 std::string ahs::Point2d::to_string() const

@@ -11,6 +11,7 @@ namespace ahs
     class Vector2d;
     class Point2i;
     class Line2;
+    class Circle;
 
     class Point2d
     {
@@ -50,8 +51,18 @@ namespace ahs
     public:
         virtual Vector2d to_vector() const;
         virtual Vector2d to_vector(const Point2d& origin) const;
+        /*
+        두 점 사이의 거리를 반환합니다.
+        */
         virtual Pdouble distance(const Point2d& other) const;
+        /*
+        직선과 한 점 사이의 거리를 반환합니다.
+        */
         virtual Pdouble distance(const Line2& l) const;
+        /*
+        원과 점 사이의 거리를 반환합니다. 점이 원 내부에 있다면 음수를 반환합니다.
+        */
+        virtual Pdouble distance(const Circle& s) const;
         virtual std::string to_string() const;
 
     public: // static
