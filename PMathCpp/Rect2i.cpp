@@ -5,8 +5,8 @@ using namespace ahs;
 ahs::Rect2i::Rect2i()
     : _left{ 0 }
     , _top{ 0 }
-    , _width{ 0 }
-    , _height{ 0 }
+    , _width{ 1 }
+    , _height{ 1 }
 {
 }
 
@@ -99,12 +99,12 @@ void ahs::Rect2i::top(Pint value)
 
 void ahs::Rect2i::width(Pint value)
 {
-    _width = value;
+    _width = (value < 1) ? 1 : value;
 }
 
 void ahs::Rect2i::height(Pint value)
 {
-    _height = value;
+    _height = (value < 1) ? 1 : value;
 }
 
 bool ahs::Rect2i::is_containing(const Point2i& p) const
@@ -113,7 +113,7 @@ bool ahs::Rect2i::is_containing(const Point2i& p) const
         top() <= p.y() && p.y() <= bottom());
 }
 
-bool ahs::Rect2i::is_containing(const Rect2i& other) const
+bool ahs::Rect2i::is_containing(const Rect2i & other) const
 {
     return (left() <= other.left() &&
         other.right() <= right() &&
